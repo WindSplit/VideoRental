@@ -41,14 +41,7 @@ public class VRUI {
 		if ( foundCustomer == null ) {
 			System.out.println("No customer found") ;
 		} else {
-			System.out.println("Name: " + foundCustomer.getName() +
-					"\tRentals: " + foundCustomer.getRentalsSize()) ;
-			for (int i = 0; i < foundCustomer.getRentalsSize(); ++i) {
-				Rental rental = foundCustomer.getRental(i);
-				System.out.print("\tTitle: " + rental.getVideo().getTitle() + " ") ;
-				System.out.print("\tPrice Code: " + rental.getVideo().getPriceCode()) ;
-			}
-
+			customerManager.printCustomer(foundCustomer);
 			foundCustomer.clearRentals();
 		}
 	}
@@ -104,7 +97,7 @@ public class VRUI {
 	public void listCustomers() {
 		System.out.println("List of customers");
 
-		customerManager.printCustomer();
+		customerManager.printCustomers();
 
 		System.out.println("End of list");
 	}
